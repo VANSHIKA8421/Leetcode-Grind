@@ -20,25 +20,13 @@ class Solution
         {
             for(int j=0; j<matrix[i].length; j++)
             {
-                if(set_x.contains(i))
+                if(set_x.contains(i) || set_y.contains(j))
                 {
                     matrix[i][j]=0;
                 }
             }
                 
         }
-           for(int i = 0 ; i < matrix.length; i++)
-        {
-            for(int j=0;j<matrix[i].length;j++)
-            {
-                if(set_y.contains(j))
-                {
-                    matrix[i][j]=0;
-                }
-            }
-                
-        }
-        
         
     }
 }
