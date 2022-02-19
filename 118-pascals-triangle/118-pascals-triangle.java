@@ -27,18 +27,3 @@ class Solution
         return list;
     }
 }
-// for(int i = 0 ; i < numRows; i++) {
-//             List<Integer> list = new ArrayList<>();
-            
-//             for(int j = 0; j < i + 1 ; j++) {
-//                 if(j == 0 || j == i) {
-//                     list.add(1);
-//                 }
-//                 else {
-//                     int a = result.get(i - 1).get(j - 1);
-//                     int b = result.get(i - 1).get(j);
-//                     list.add(a + b);
-//                 }
-//             }
-//             result.add(list);
-//          }
