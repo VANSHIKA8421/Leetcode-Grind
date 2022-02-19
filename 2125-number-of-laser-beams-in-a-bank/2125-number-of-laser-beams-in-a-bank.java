@@ -12,12 +12,12 @@ class Solution
         int count =0;
         ArrayList<Integer> list = new ArrayList<>();
         
-        for( String i : bank)
+        for( int i = 0 ; i < bank.length ; i++)
         {
             count = 0;
-            for(char j :i.toCharArray())
+            for(int j = 0 ; j < n ; j++)
             {
-                if(j=='1')
+                if(bank[i].charAt(j)=='1')
                 {
                     count++;
                 }
