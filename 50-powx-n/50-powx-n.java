@@ -2,7 +2,7 @@ class Solution
 {
     public double myPow(double x, int n) 
     {
-        double output = 1d;
+        double output = 1.0;
         long power = n;
         if(power < 0){
             power = -1 * power;
