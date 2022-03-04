@@ -27,8 +27,9 @@ class Solution
             if(t1.val<=t2.val)
             {
                 ListNode nn = new ListNode();
-                handler.next = nn;
+               
                 nn.val=t1.val;
+                 handler.next = nn;
                 t1=t1.next; 
             }
             else
