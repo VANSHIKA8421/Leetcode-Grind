@@ -24,14 +24,14 @@ class Solution
         
         ListNode dummy = new ListNode();
         
-        // if(t1.val<=t2.val)
-        // {
-        //     dummy.next=t1;
-        // }
-        // else
-        // {
-        //     dummy.next=t2;
-        // }
+        if(t1.val<=t2.val)
+        {
+            dummy.next=t1;
+        }
+        else
+        {
+            dummy.next=t2;
+        }
         
         ListNode helper = dummy;
         
@@ -49,18 +49,20 @@ class Solution
             }
             helper = helper.next;
         
-        
-        if(t1!=null)
+        }
+        while(t1!=null)
         {
             helper.next = t1;
-            
+            helper=helper.next;
+            t1=t1.next;
         }
         
-        if(t2!=null)
+        while(t2!=null)
         {
             helper.next = t2;
+             helper=helper.next;
+            t2=t2.next;
             
-        }
         }
         return dummy.next;
     }
