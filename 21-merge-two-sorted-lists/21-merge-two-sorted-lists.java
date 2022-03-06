@@ -12,50 +12,55 @@ class Solution
 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) 
     {
+        
+        ListNode t1 = new ListNode();
+        t1 = l1;
+        
+        ListNode t2 = new ListNode();
+        t2 = l2;
+        
+        if(t1==null) return t2;
+        if(t2==null) return t1;
+        
         ListNode dummy = new ListNode();
         
-        ListNode handler = dummy;
+        // if(t1.val<=t2.val)
+        // {
+        //     dummy.next=t1;
+        // }
+        // else
+        // {
+        //     dummy.next=t2;
+        // }
         
-        if(l1==null) return l2;
-        if(l2==null) return l1;
+        ListNode helper = dummy;
         
-         ListNode t1 =l1 , t2=l2;
-        
-        while(t1!=null && t2!=null)
+        while(t1!=null&&t2!=null)
         {
-            
             if(t1.val<=t2.val)
             {
-                ListNode nn = new ListNode();
-               
-                nn.val=t1.val;
-                 handler.next = nn;
-                t1=t1.next; 
+                helper.next = t1;
+                t1 = t1.next;
             }
             else
             {
-                ListNode nn = new ListNode();
-                handler.next = nn;
-                nn.val = t2.val;
-                t2=t2.next;
+                helper.next = t2;
+                t2 = t2.next;
             }
-            handler=handler.next;
-        }
-        while(t1!=null)
+            helper = helper.next;
+        
+        
+        if(t1!=null)
         {
-            ListNode nn = new ListNode();
-            handler.next = nn;
-            nn.val=t1.val;
-            t1=t1.next;
-            handler=handler.next;
+            helper.next = t1;
+            
         }
-        while(t2!=null)
+        
+        if(t2!=null)
         {
-            ListNode nn = new ListNode();
-            handler.next = nn;
-            nn.val=t2.val;
-            t2=t2.next;
-            handler=handler.next;
+            helper.next = t2;
+            
+        }
         }
         return dummy.next;
     }
