@@ -24,15 +24,6 @@ class Solution
         
         ListNode dummy = new ListNode();
         
-        if(t1.val<=t2.val)
-        {
-            dummy.next=t1;
-        }
-        else
-        {
-            dummy.next=t2;
-        }
-        
         ListNode helper = dummy;
         
         while(t1!=null&&t2!=null)
