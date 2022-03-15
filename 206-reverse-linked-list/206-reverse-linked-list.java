@@ -14,17 +14,15 @@ class Solution
     {
         ListNode prev = null;
         ListNode curr = head;
-        ListNode nxt = null;
-        
         while(curr!=null)
         {
-            nxt = curr.next;
-            curr.next = prev;
+            ListNode nx = curr.next;
+            curr.next=prev;
             prev = curr;
-            curr = nxt;
-            // nxt = nxt.next;
-
+            curr=nx;
         }
         return prev;
+        
     }
 }
+// first set up nxt pointer
