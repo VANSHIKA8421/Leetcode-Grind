@@ -13,27 +13,28 @@
  *     }
  * }
  */
-
-
-// VLR
 class Solution 
 {
     public List<Integer> preorderTraversal(TreeNode root) 
     {
-        ArrayList<Integer> list = new ArrayList<>();
-        helper(root,list);
-        return list;
-        
-    }
-    
-    void helper(TreeNode node, ArrayList<Integer> list)
-    {
-        if(node==null)
+        List<Integer> ans = new ArrayList<>();
+        if(root==null) return ans;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.empty())
         {
-            return;
+            TreeNode node = stack.pop();
+            ans.add(node.val);
+            
+            if(node.right!=null)
+            {
+                stack.push(node.right);
+            }
+            if(node.left!=null)
+            {
+                stack.push(node.left);
+            }
         }
-        list.add(node.val);
-        helper(node.left,list);
-        helper(node.right,list);
+        return ans;
     }
 }
