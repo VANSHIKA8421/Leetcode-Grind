@@ -13,35 +13,22 @@
  *     }
  * }
  */
-class Solution 
-{
+class Solution {
+    
     public boolean isBalanced(TreeNode root) 
     {
-        if(maxHeight(root)==-1)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        if(check(root)==-1) return false;
+        else return true;
     }
-    int maxHeight( TreeNode node)
+    private int check(TreeNode node)
     {
-        if(node==null)
-        {
-            return 0;
-        }
-        int lh = maxHeight(node.left);
-        int rh = maxHeight(node.right);
-        if(lh ==-1 || rh==-1) return -1;
-        if(Math.abs(lh-rh)>1)
-        {
-            return -1;
-        }
-        else
-        {
-            return 1+Math.max(lh,rh);
-        }
+        if(node==null) return 0;
+        int lh = check(node.left);
+        int rh = check(node.right);
+        
+        if(Math.abs(lh-rh)>1) return -1;
+        if(lh==-1 || rh ==-1) return -1;
+        
+        return 1+Math.max(lh,rh);
     }
 }
