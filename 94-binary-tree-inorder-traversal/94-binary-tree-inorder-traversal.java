@@ -14,26 +14,21 @@
  * }
  */
 
-// LVR
+//LVR left ver right 
 class Solution 
 {
     public List<Integer> inorderTraversal(TreeNode root) 
     {
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        helper(root,list);
+        List<Integer> list = new ArrayList<>();
+        if(root==null) return list;
+        helper_inorder(root,list);
         return list;
     }
-        void helper( TreeNode node, ArrayList<Integer> list)
-        {
-            if(node==null)
-            {
-                return;
-            }
-            helper(node.left, list);
-            list.add(node.val);
-            helper(node.right,list);
-            
-        }
-    
+    void helper_inorder( TreeNode node, List<Integer> list)
+    {
+        if(node == null ) return;
+        helper_inorder(node.left,list);
+        list.add(node.val);
+        helper_inorder(node.right,list);
+    }
 }
