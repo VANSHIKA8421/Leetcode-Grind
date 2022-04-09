@@ -2,6 +2,8 @@ class Solution
 {
     public int[] topKFrequent(int[] nums, int k) 
     {
+        
+        
         int n = nums.length;
         List<Integer>[] bucket = new List[nums.length + 1];
         
@@ -23,18 +25,17 @@ class Solution
             bucket[freq].add(i);
 
         }
-        int ans[] = new int[k];
-        int count = 0;
-        for (int i = bucket.length - 1; i >= 0 ; i--)
+        int[] ans = new int[k]; int count = 0;
+        for(int i = bucket.length-1 ; i>=0 ; i--)
         {
             if (bucket[i] != null)
             {
-                for(int j =0; j <bucket[i].size(); j++)
+                for(int j =0;  j <bucket[i].size()&& j<=k+1 ;j++)
                 {
-                    ans[count++] = bucket[i].get(j);
+                     ans[count++] = bucket[i].get(j);
                 }
             }
-            if(count == k) break;
+             if(count == k) break;
         }
         return ans;
     }
