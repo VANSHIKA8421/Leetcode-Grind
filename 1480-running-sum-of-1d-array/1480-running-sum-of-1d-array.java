@@ -6,7 +6,7 @@ class Solution
         int size = nums.length;
         for( iterator = 1; iterator < size ; iterator++)
         {
-            nums[iterator] = nums[iterator]+nums[iterator-1];
+            nums[iterator] +=nums[iterator-1];
         }
         return nums;
     }
